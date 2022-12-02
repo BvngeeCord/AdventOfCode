@@ -6,6 +6,6 @@ pub struct Day1 {
 
 impl Solver for Day1 {
     fn solve(&mut self) -> i32 {
-        1231
+        12311
     }
 }
