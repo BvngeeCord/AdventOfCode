@@ -7,11 +7,12 @@ pub struct Day1 {
 impl Solver for Day1 {
     fn solve(&mut self, part: u16) -> Result<i32, String> {
         
-        let contents = util::load_from_text_file("./src/aoc_2022/day_1/input.txt", "\n")?;
+        let contents: String = util::load_from_text_file("./src/aoc_2022/day_1/input.txt")?;
+        let lines: Vec<&str> = contents.lines().collect();
         
         let mut elves: Vec<i32> = Vec::new();
         
-        contents.split(|string| string.is_empty()).for_each(|slice| {
+        lines.split(|string| string.is_empty()).for_each(|slice| {
             elves.push(
                 slice.iter().map(|line| -> i32 {line.parse().unwrap()}).sum()
             )
