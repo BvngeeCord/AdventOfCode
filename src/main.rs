@@ -8,12 +8,12 @@ use args::ProgramArgs;
 use clap::Parser;
 
 pub trait Solver {
-    fn solve(&mut self) -> i32;
+    fn solve(&mut self, part: u16) -> Result<i32, String>;
 }
 
 fn main() -> Result<(), String> {
     let args = ProgramArgs::parse();
-    let (year, day) = (args.year, args.day);
+    let (year, day, part) = (args.year, args.day, args.part);
 
     if year < 2022 {
         return Err("Invalid year!".to_string())
@@ -28,7 +28,7 @@ fn main() -> Result<(), String> {
     if let Some(days) = solvers.get_mut(&year) {
 
         if let Some(solver) = days.get_mut(day as usize - 1) {
-            println!("Year: {}, Day: {}, Output: {}", year, day, solver.solve());
+            println!("Year: {}, Day: {}, Output: {}", year, day, solver.solve(part)?);
         } else {
             return Err("Error finding day's solver!".to_string())
         }

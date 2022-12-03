@@ -10,4 +10,7 @@ pub struct ProgramArgs {
     ///The day of the month to run the challenge for
     pub day: u16,
 
+    ///The question part to solve for
+    pub part: u16,
+
 }
