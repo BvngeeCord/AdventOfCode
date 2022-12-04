@@ -28,7 +28,7 @@ fn main() -> Result<(), String> {
     if let Some(days) = solvers.get_mut(&year) {
 
         if let Some(solver) = days.get_mut(day as usize - 1) {
-            println!("Year: {}, Day: {}, Output: {}", year, day, solver.solve(part)?);
+            println!("Year: {}, Day: {}, Part: {} Output: {}", year, day, part, solver.solve(part)?);
         } else {
             return Err("Error finding day's solver!".to_string())
         }
