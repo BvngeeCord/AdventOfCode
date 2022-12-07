@@ -73,7 +73,6 @@ impl Day3 {
             }
         }
 
-        println!("{:?}", unique_chars);
         unique_chars
     }
 }
