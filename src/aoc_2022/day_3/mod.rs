@@ -6,7 +6,7 @@ pub struct Day3 {}
 
 impl Solver for Day3 {
     fn solve(&mut self, part: u16) -> Result<i32, String> {
-        let contents = util::load_from_text_file("./src/aoc_2022/day_3/input.txt").unwrap();
+        let contents = util::load_from_text_file(2022, 3).unwrap();
         let rucksacks: Lines = contents.lines();
 
         let unique_chars = match part {

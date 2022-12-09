@@ -6,7 +6,7 @@ pub struct Day2 {}
 impl Solver for Day2 {
     fn solve(&mut self, part: u16) -> Result<i32, String> {
 
-        let contents: String = util::load_from_text_file("./src/aoc_2022/day_2/input.txt")?;
+        let contents: String = util::load_from_text_file(2022, 2)?;
         let lines: Vec<&str> = contents.lines().collect();
 
         let games: Vec<(RPS, RPS)> = lines.iter().map(move |string| -> (RPS, RPS) {
